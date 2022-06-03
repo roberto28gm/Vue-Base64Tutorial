@@ -1,15 +1,19 @@
-<script setup>
+<script>
+import BaseForm from './components/BaseForm.vue';
+
+export default {
+  components: {
+    BaseForm
+  }
+}
 </script>
 
 <template>
-  <header>
-  </header>
-  <main>
-    <div class="container">
+    <div>
       <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="200" height="200" />
       <h1>Vue Base64 Tutorial</h1>
+      <BaseForm />
     </div>
-  </main>
 </template>
 
 <style>
