@@ -9,9 +9,11 @@ export default {
 </script>
 
 <template>
-    <div>
-      <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="200" height="200" />
-      <h1>Vue Base64 Tutorial</h1>
+    <div class="container">
+      <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="100" height="100" />
+      <h2>Vue Base64 Tutorial</h2>
+      <hr>
+      <br>
       <BaseForm />
     </div>
 </template>
