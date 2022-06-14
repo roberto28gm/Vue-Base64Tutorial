@@ -2,17 +2,12 @@
 export default {
   methods: {
     decodeBase64() {
-      
-      this.$emit('decode', this.textvalue);
+      console.log("Text Value: " + this.textvalue);
+      let dataDecoded = btoa(this.textvalue);
+      alert(dataDecoded);
+      this.textDecoded = dataDecoded;
     }
   }
-}
-
-function decode(data){
-  console.log("dentro de la funcion decode");
-  let dataDecoded = btoa(data);
-  alert(dataDecoded);
-  return dataDecoded;
 }
 
 </script>
@@ -29,7 +24,7 @@ function decode(data){
     </div>
     
     <div class="form-group">
-      <p>Decoded value:  {{ textvalue }}  </p>
+      <p>Decoded value:  {{ textDecoded }}  </p>
     </div>    
 
   </form>
