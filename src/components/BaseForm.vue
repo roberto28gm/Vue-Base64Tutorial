@@ -1,21 +1,27 @@
 <script>
 export default {
-  props: {
-    todo: Object
-  },
   methods: {
-    decodeBase64: function (event) {
-      alert("test");
+    decodeBase64() {
+      
+      this.$emit('decode', this.textvalue);
     }
   }
 }
+
+function decode(data){
+  console.log("dentro de la funcion decode");
+  let dataDecoded = btoa(data);
+  alert(dataDecoded);
+  return dataDecoded;
+}
+
 </script>
 
 <template>
   <form @submit.prevent="decodeBase64">
     <div class="row">
       <div class="col">
-        <input v-model="textValue" type="text" class="form-control" placeholder="Enter Base 64 value">
+        <input v-model="textvalue" type="text" class="form-control" placeholder="Enter Base 64 value">
       </div>
       <div class="col">
         <button type="submit" class="btn btn-primary mb-2">Decode</button>
@@ -23,9 +29,17 @@ export default {
     </div>
     
     <div class="form-group">
-      <label for="decodedValue">Decoded value</label>
-      <textarea v-model="textArea" class="form-control" id="decodedValue" rows="3"></textarea>
+      <p>Decoded value:  {{ textvalue }}  </p>
     </div>    
 
   </form>
 </template>
+
+<style scoped>
+p{
+  background-color: #eee;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+</style>
